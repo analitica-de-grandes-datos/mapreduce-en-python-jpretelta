@@ -17,6 +17,5 @@ if __name__ == '__main__':
     #ordernar lista de tuplas
     records = sorted(records, key=operator.itemgetter(1), reverse=False)
 
-    #imprimir el diccionario
     for key, val in records:
         sys.stdout.write("{},{}\n".format(key, val))
