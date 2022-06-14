@@ -7,7 +7,7 @@ import sys
 if __name__ == '__main__':
 
     curkey = None
-    tuple_list = []
+    value_list = []
 
     for line in sys.stdin:
 
@@ -15,18 +15,18 @@ if __name__ == '__main__':
         val = float(val)
         
         if key == curkey:
-            tuple_list.append(val)
+            value_list.append(val)
         else:
             if curkey is not None:
-                suma = sum(tuple_list)
-                avg = mean(tuple_list)
-                tuple_list.clear()                
+                suma = sum(value_list)
+                avg = mean(value_list)
+                value_list.clear()                
 
                 sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, avg))
 
             curkey = key
-            tuple_list.append(val)               
+            value_list.append(val)               
 
-    suma = sum(tuple_list)
-    avg = mean(tuple_list)
+    suma = sum(value_list)
+    avg = mean(value_list)
     sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, avg))
